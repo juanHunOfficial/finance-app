@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import dotenv_values
+
+env = dotenv_values(".env")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = env.get("DJ_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'transaction_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -76,11 +82,11 @@ WSGI_APPLICATION = 'expense_tracker_proj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',  
-        'USER': '',           
-        'PASSWORD': '',  
-        'HOST': '', 
-        'PORT': '5432',               
+        'NAME': env.get("DB_NAME"),  
+        'USER': env.get("DB_USER"),           
+        'PASSWORD': env.get("DB_PASSWORD"),  
+        'HOST': env.get("DB_HOST"), 
+        'PORT': env.get("DB_PORT"),               
     }
 }
 
