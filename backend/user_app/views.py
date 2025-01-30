@@ -6,6 +6,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
 from .models import User
+from category_app.serializers import CategorySerializer
+from monthly_sum_app.serializers import MonthlySummarySerializer
 
 # Create your views here.
 class TokenReq(APIView):
@@ -37,7 +39,16 @@ class LogIn(APIView):
 class Info(TokenReq):
     
   def get(self, request):
-    return Response({'email':request.user.email, 'id': request.user.id})
+    categories = request.user.users.all()
+    categories_data = CategorySerializer(categories, many=True).data
+    monthly_summaries = request.user.users.all()
+    monthly_summaries_data = MonthlySummarySerializer(monthly_summaries, many=True).data
+    return Response({
+      'id': request.user.id, 
+      'email':request.user.email, 
+      'categories': categories_data, 
+      'monthly_summaries' : monthly_summaries_data
+    })
     
 class LogOut(TokenReq):
     
