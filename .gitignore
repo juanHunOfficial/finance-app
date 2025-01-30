@@ -2,3 +2,5 @@
 node_modules/
 build/
 finance_venv
+__pycache__/
+*.py[cod]
