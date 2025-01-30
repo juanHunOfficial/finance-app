@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'transaction_app',
     'user_app',
+    'category_app',
     
 ]
 
