@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import MonthlySummary
 
 class MonthlySummarySerializer(serializers.ModelSerializer):
-  transactions = serializers.SerializerMethodsField()
+  transactions = serializers.SerializerMethodField()
   class Meta:
     model = MonthlySummary
     fields = [

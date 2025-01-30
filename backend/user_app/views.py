@@ -19,7 +19,7 @@ class SignUp(APIView):
   def post(self, request):
     data = request.data.copy()
     
-    data["email"] = request.data["email"]
+    data["username"] = request.data["email"]
     new_user = User.objects.create_user(**data)
     token = Token.objects.create(user=new_user)
     return Response({'email' : new_user.email, 'token': token.key, 'id': new_user.id }, status=HTTP_201_CREATED)
@@ -39,9 +39,9 @@ class LogIn(APIView):
 class Info(TokenReq):
     
   def get(self, request):
-    categories = request.user.users.all()
+    categories = request.user.categories.all()
     categories_data = CategorySerializer(categories, many=True).data
-    monthly_summaries = request.user.users.all()
+    monthly_summaries = request.user.monthly_summary.all()
     monthly_summaries_data = MonthlySummarySerializer(monthly_summaries, many=True).data
     return Response({
       'id': request.user.id, 

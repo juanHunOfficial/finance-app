@@ -3,7 +3,7 @@ from .models import Category
 from transaction_app.serializers import TransactionSerializer
 
 class CategorySerializer(serializers.ModelSerializer):
-  transactions = serializers.SerializerMethodsField()
+  transactions = serializers.SerializerMethodField()
   class Meta:
     model = Category
     fields = [
