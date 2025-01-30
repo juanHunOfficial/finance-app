@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'transaction_app',
     'user_app',
     'category_app',
+    'monthly_sum_app',
     
 ]
 
