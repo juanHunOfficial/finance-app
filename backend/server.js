@@ -4,10 +4,8 @@ const server = express();
 const mongoose = require('mongoose');
 const transactionsRouter = require('./routes/transactions');
 
-console.log('MongoDB Connection String:', process.env.MONGO_DB_CONNECTION_STRING);
-
 mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING)
-  .then(() => console.log("connected to MongoDB"))
+  .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB: ", err));
 
 // body-parser middleware
