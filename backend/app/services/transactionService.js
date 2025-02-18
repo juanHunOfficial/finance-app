@@ -11,7 +11,7 @@ const createTransaction = async (transactionData) => {
 
 const getAllTransactions = async () => {
   try {
-    const transactions = await Transactions.find();
+    const transactions = await Transaction.find();
     const filteredTransactions = transactions.map(transaction => {
       // must be converted to a plain JS object to modify it
       const transactionObject = transaction.toObject();
