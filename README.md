@@ -70,7 +70,7 @@ The backend of the application is designed to have the following key models:
 
 You can visualize the backend architecture of the application here:
 
-![Backend Design Diagram](./path_to_your_image_from_DrawSQL)
+![Backend Design Diagram](./finance-app-drawsql.png)
 
 ---
 
