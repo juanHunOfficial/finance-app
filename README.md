@@ -1,6 +1,7 @@
 # Budgeting Tool
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -79,25 +80,25 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/budgeting-tool.git
+    ```bash
+    git clone https://github.com/your-username/budgeting-tool.git
 
 2. Navigate into the project folder:
   
-  ```bash
-  cd finance-app
+    ```bash
+    cd finance-app
 
 3. Install dependencies for the frontend:
 
-  ```bash
-  cd frontend
-  npm install
+    ```bash
+    cd frontend
+    npm install
 
 4. Install dependencies for the backend: 
 
-  ```bash
-  cd ../backend
-  npm install
+    ```bash
+    cd ../backend
+    npm install
 
 5. Set up environment variables:
 
@@ -107,15 +108,15 @@ To run this project locally, follow these steps:
 
 - Start the backend server:
   
-  ```bash
-  npm run dev
+    ```bash
+    npm run dev
 
 - Start the frontend application:
 
-  ```bash
-  cd ../frontend
-  npm run dev
-  
+    ```bash
+    cd ../frontend
+    npm run dev
+    
 ## Usage
 
 Once the application is running locally, you can access the app by navigating to http://localhost:3000 in your browser.
