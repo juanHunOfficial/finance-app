@@ -1,6 +1,8 @@
+// controllers/transactionController.js
 const transactionService = require('../services/transactionService');
 
-const createTransaction =  async (req, res) => {
+// Create a new transaction
+const createTransaction = async (req, res) => {
   try {
     const transactionData = req.body;
     const newTransaction = await transactionService.createTransaction(transactionData);
@@ -10,15 +12,17 @@ const createTransaction =  async (req, res) => {
   }
 };
 
+// Get all transactions
 const getAllTransactions = async (req, res) => {
   try {
     const transactions = await transactionService.getAllTransactions();
     res.status(200).json(transactions);
   } catch (err) {
-    res.status(500).json({message: err.message});
+    res.status(500).json({ message: err.message });
   }
 };
 
+// Get a single transaction
 const getSingleTransaction = async (req, res) => {
   try {
     const { id } = req.params;
@@ -33,6 +37,7 @@ const getSingleTransaction = async (req, res) => {
   }
 };
 
+// Update a transaction
 const updateTransaction = async (req, res) => {
   try {
     const { id } = req.params;
@@ -49,6 +54,7 @@ const updateTransaction = async (req, res) => {
   }
 };
 
+// Delete a transaction
 const deleteTransaction = async (req, res) => {
   try {
     const { id } = req.params;
