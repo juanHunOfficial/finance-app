@@ -1,21 +1,27 @@
 const express = require('express')
 
 const router = express.Router()
-const transactionController = require('../controllers/transactionController');
+const {
+  getAllTransactions,
+  createTransaction,
+  getSingleTransaction,
+  updateTransaction,
+  deleteTransaction
+} = require('../controllers/transactionController');
 
 ///////////////////// DEFINED ROUTES //////////////////////////
 
 // All transactions
 router
   .route("/")
-  .get(transactionController.getAllTransactions)
-  .post(transactionController.createTransaction);
+  .get(getAllTransactions)
+  .post(createTransaction);
 
 // Single transactions
 router
   .route("/:id")
-  .get(transactionController.getSingleTransaction)
-  .patch(transactionController.updateTransaction)
-  .delete(transactionController.deleteTransaction);
+  .get(getSingleTransaction)
+  .patch(updateTransaction)
+  .delete(deleteTransaction);
 
 module.exports = router
